@@ -19,7 +19,7 @@ jobs:
 
       - name: Create metadata.json
         run: |
-          $json = '{"Endpoint":"https://neu.codesigning.azure.net","CodeSigningAccountName":"${{ secrets.SIGNING_ACCOUNT_NAME }}","CertificateProfileName":"${{ secrets.CERTIFICATE_PROFILE_NAME }}","ExcludeCredentials":["VisualStudioCredential","VisualStudioCodeCredential","SharedTokenCacheCredential","InteractiveBrowserCredential"]}'
+          $json = '{"Endpoint":"https://neu.codesigning.azure.net","CodeSigningAccountName":"backnot","CertificateProfileName":"profile","ExcludeCredentials":["VisualStudioCredential","VisualStudioCodeCredential","SharedTokenCacheCredential","InteractiveBrowserCredential"]}'
           $bytes = [System.Text.Encoding]::ASCII.GetBytes($json)
           [System.IO.File]::WriteAllBytes("metadata.json", $bytes)
         shell: powershell
