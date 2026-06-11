@@ -29,13 +29,13 @@ jobs:
           trusted-signing-account-name: backnot               # your account name
           certificate-profile-name: profile                   # your profile name
           files-folder: ${{ github.workspace }}
-          files-folder-filter: ps1                            # signing ps1 like your old workflow
+          files-folder-filter: exe                            # signing ps1 like your old workflow
           file-digest: SHA256
           timestamp-rfc3161: http://timestamp.acs.microsoft.com
           timestamp-digest: SHA256
 
       - name: Verify
-        run: Get-AuthenticodeSignature "test.ps1"
+        run: Get-AuthenticodeSignature "unsigned.exe"
         shell: powershell
 
       - name: Upload signed artifact
